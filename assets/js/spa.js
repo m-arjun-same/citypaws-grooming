@@ -1,5 +1,5 @@
-/* Alessandro Pet Spa — own engines: groom-wipe slider, two-worlds expander,
-   treatment accordion, spa-day timeline draw, booking form. */
+/* CityPaws Grooming — own engines: groom-wipe slider, two-worlds expander,
+   services accordion, story timeline draw, booking form. */
 (function(){
 "use strict";
 var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -47,7 +47,7 @@ if (window.gsap && window.ScrollTrigger && !reduced){
 } else {
   document.documentElement.classList.add("no-anim");
   var f = document.getElementById("tlFill"); if (f) f.style.transform = "scaleY(1)";
-  var b = document.querySelector(".trust__big span[data-count]"); if (b) b.textContent = "4.7";
+  var b = document.querySelector(".trust__big span[data-count]"); if (b) b.textContent = "4.5";
 }
 
 /* ---------- THE GROOM WIPE — rest shows BEFORE only; drag wipes the groomed AFTER in over it ---------- */
@@ -73,7 +73,7 @@ if (ba){
   setPos(0);
 }
 
-/* ---------- TWO WORLDS expander ---------- */
+/* ---------- TWO WORLDS expander (salon / mobile) ---------- */
 var worlds = document.querySelectorAll("[data-world]");
 worlds.forEach(function(w){
   function open(){ worlds.forEach(function(x){ x.classList.toggle("is-open", x === w); }); }
@@ -81,18 +81,14 @@ worlds.forEach(function(w){
   w.addEventListener("click", open);
 });
 
-/* ---------- TREATMENT MENU ---------- */
+/* ---------- SERVICES — à la carte accordion (packages are rendered in HTML) ---------- */
 var SERVICES = [
-  ["Dog Grooming","Dogs","Haircuts, nail trimming, ear cleaning and styling — breed-specific cuts as well as custom styles based on your preferences, finished so your dog leaves looking fabulous and feeling comfortable."],
-  ["Cat Grooming","Cats","Haircuts, nail trimming, ear cleaning and detangling, with the gentle handling cats require — a stress-free experience for even the most finicky felines."],
-  ["Dog Bathing","Dogs","Standard baths, medicated baths for skin conditions, and flea & tick baths to keep your dog clean and pest-free, with gentle bathing techniques throughout."],
-  ["Cat Bathing","Cats","Standard baths, medicated baths for skin issues, and flea & tick baths — each cat handled with care for a gentle, stress-free bath."],
-  ["Nail Trimming & Filing","Dogs & cats","Regular nail care that prevents overgrowth and maintains proper foot health, reducing the risk of discomfort and injury."],
-  ["Ear Cleaning","Dogs & cats","Thorough inspection and gentle cleaning to prevent infections and mites, keeping ears healthy and free from irritation."],
-  ["Teeth Brushing & Dental","Dogs & cats","Oral hygiene care that helps prevent dental disease, reduces bad breath, and keeps teeth and gums healthy."],
-  ["De-Shedding Treatments","Dogs & cats","Treatments designed to remove loose fur and reduce shedding — a healthier coat for them, a cleaner home for you."],
-  ["Flea & Tick Treatments","Dogs & cats","Treatments that effectively eliminate fleas and ticks and provide preventative care to keep them at bay."],
-  ["Puppy & Kitten Grooming","First visits","Young pets are introduced to grooming in a gentle, positive manner, so they develop good grooming habits early on."]
+  ["De-matting","À la carte","Patient, gentle work through tangles and mats — we save every bit of coat we safely can, and we'll tell you honestly when a fresh start is kinder."],
+  ["De-shedding","À la carte","Treatments designed to remove loose undercoat and reduce shedding — a healthier coat for them, a cleaner home for you."],
+  ["Nail Cutting & Grinding","À la carte","Cut and smooth finish by grinding, keeping nails at a healthy length for comfortable paws and proper foot health."],
+  ["Teeth Brushing","À la carte","A gentle brush that helps reduce plaque and bad breath, and keeps teeth and gums in better shape between vet visits."],
+  ["Doggie Facials","À la carte","A soothing facial cleanse for tear-stained, food-catching faces — a CityPaws finishing touch, and a doodle favourite."],
+  ["Doodle & Poodle Specialist Cuts","Specialists","Our headquarters specialty: teddy-bear cuts, face shaping and coat plans for doodles and poodles, shaped to the dog in front of us."]
 ];
 var list = document.getElementById("menuList");
 if (list){
@@ -131,7 +127,7 @@ if (form){
     var owner = (fd.get("owner")||"").toString().trim(),
         phone = (fd.get("phone")||"").toString().trim(),
         pet = (fd.get("pet")||"").toString().trim(),
-        species = (fd.get("species")||"Dog").toString(),
+        where = (fd.get("where")||"River Oaks Salon").toString(),
         service = (fd.get("service")||"").toString(),
         date = (fd.get("date")||"").toString(),
         err = document.getElementById("formErr");
@@ -148,17 +144,18 @@ if (form){
     err.hidden = true;
     var notes = (fd.get("notes")||"").toString().trim();
     var body = ["Appointment request from the website","",
-      "Name: " + owner, "Phone: " + phone, "Pet: " + pet + " (" + species + ")",
+      "Name: " + owner, "Phone: " + phone, "Pet: " + pet,
+      "Where: " + where,
       "Service: " + service, "Preferred day: " + (date || "First available"),
       "Notes: " + (notes || "—")].join("\n");
-    var mail = "mailto:alessandropetspa@yahoo.com"
+    var mail = "mailto:management@citypawshtx.com"
       + "?subject=" + encodeURIComponent("Appointment request — " + pet + " · " + service)
       + "&body=" + encodeURIComponent(body);
     document.getElementById("doneText").textContent =
-      "Thanks, " + owner.split(" ")[0] + " — your email app should open with this request addressed to the spa. Press Send there, and we'll call you on " + phone + " to confirm " + pet + "'s appointment.";
+      "Thanks, " + owner.split(" ")[0] + " — your email app should open with this request addressed to CityPaws. Press Send there, and we'll call you on " + phone + " to confirm " + pet + "'s appointment.";
     var sum = document.getElementById("doneSum");
     sum.innerHTML = "";
-    [["Pet", pet + " (" + species + ")"], ["Service", service], ["Preferred day", date || "First available"], ["We call", phone]].forEach(function(pair){
+    [["Pet", pet], ["Where", where], ["Service", service], ["Preferred day", date || "First available"], ["We call", phone]].forEach(function(pair){
       var d = document.createElement("div");
       var dt = document.createElement("dt"); dt.textContent = pair[0];
       var dd = document.createElement("dd"); dd.textContent = pair[1];
