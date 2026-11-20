@@ -5,6 +5,7 @@
 (function(){
 "use strict";
 var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (reduced){ var hv = document.getElementById("heroVid"); if (hv){ hv.removeAttribute("autoplay"); hv.pause(); } }
 var hasGsap = !!(window.gsap && window.ScrollTrigger);
 
 /* ---------- tiny word splitter (own code, no SplitText) ---------- */
@@ -97,7 +98,7 @@ if (hasGsap && !reduced){
     .to(".loader__panel--r", { xPercent:101, duration:.68, ease:"power4.inOut" }, "curtain")
     .set(loaderEl, { display:"none" })
     /* hero intro */
-    .fromTo("#heroImg", { scale:1.25 }, { scale:1, duration:1.5, ease:"power3.out" }, "curtain+=.18")
+    .fromTo("#heroVid", { scale:1.14 }, { scale:1, duration:1.6, ease:"power3.out" }, "curtain+=.18")
     .to(".hline__in", { yPercent:0, duration:.9, ease:"power4.out" }, "curtain+=.3")
     .to(heroIn, { opacity:1, y:0, duration:.8, stagger:.09, ease:"power3.out" }, "curtain+=.45")
     .to(".hero__rule", { scaleX:1, duration:.8, ease:"power3.inOut" }, "curtain+=.6");
@@ -108,12 +109,12 @@ if (hasGsap && !reduced){
       gsap.set(heroIn, { opacity:1, y:0 });
       gsap.set(".hline__in", { yPercent:0 });
       gsap.set(".hero__rule", { scaleX:1 });
-      gsap.set("#heroImg", { scale:1 });
+      gsap.set("#heroVid", { scale:1 });
     }
   }, 4500);
 
   /* hero photo parallax on scroll-out */
-  gsap.to("#heroImg", { yPercent:9, ease:"none",
+  gsap.to("#heroVid", { yPercent:10, ease:"none",
     scrollTrigger:{ trigger:".hero", start:"top top", end:"bottom top", scrub:true } });
 
   /* ---------- MARQUEES ---------- */

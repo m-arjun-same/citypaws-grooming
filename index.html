@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/spa.css?v=7">
+<link rel="stylesheet" href="assets/css/spa.css?v=8">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"CityPaws Grooming","description":"Dog grooming with elegance in River Oaks, Houston — salon and mobile grooming, doodle & poodle specialists, since 2019.","telephone":"+1-713-438-2844","email":"management@citypawshtx.com","address":{"@type":"PostalAddress","streetAddress":"1219 S Shepherd Dr","addressLocality":"Houston","addressRegion":"TX","postalCode":"77019"},"openingHours":["Mo-Sa 08:00-17:00"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.5"}}
 </script>
@@ -43,8 +43,14 @@
 
 <main id="top">
 
-  <!-- 1 · SPLIT HERO -->
+  <!-- 1 · VIDEO HERO — CityPaws' own drone film (from citypawshtx.com) -->
   <section class="hero">
+    <div class="hero__media" aria-hidden="true">
+      <video id="heroVid" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.webp">
+        <source src="assets/video/hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero__shade"></div>
+    </div>
     <div class="hero__panel">
       <svg class="hero__mark hin" viewBox="0 0 64 64" aria-hidden="true"><g fill="#C9A24B"><ellipse cx="32" cy="41" rx="14" ry="12"/><circle cx="13" cy="30" r="6"/><circle cx="23" cy="21" r="6.5"/><circle cx="39" cy="21" r="6.5"/><circle cx="49" cy="30" r="6"/></g><g fill="#131315"><rect x="24" y="38" width="4" height="9"/><rect x="30" y="34" width="4" height="13"/><rect x="36" y="39" width="4" height="8"/></g></svg>
       <h1 class="hero__name"><span class="hline"><span class="hline__in">CITYPAWS</span></span></h1>
@@ -63,7 +69,6 @@
       </div>
       <a class="hero__cue hin" href="#story">Scroll<span>↓</span></a>
     </div>
-    <div class="hero__photo"><img id="heroImg" src="assets/img/citypaws/cp4.webp" alt="A doodle being trimmed at the grooming table at CityPaws" fetchpriority="high"></div>
   </section>
 
   <!-- MARQUEE -->
@@ -413,6 +418,6 @@
 <script src="assets/js/vendor/lenis.min.js?v=1"></script>
 <script src="assets/js/vendor/gsap.min.js?v=1"></script>
 <script src="assets/js/vendor/ScrollTrigger.min.js?v=1"></script>
-<script src="assets/js/spa.js?v=6"></script>
+<script src="assets/js/spa.js?v=7"></script>
 </body>
 </html>
