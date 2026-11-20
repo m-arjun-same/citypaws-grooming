@@ -445,8 +445,8 @@ if (form){
     function bgmPlay() {
       var p = bgm.play();
       if (p && p.catch) p.catch(function(){});
-      if (window.gsap) gsap.to(bgm, { volume: 0.32, duration: 1.4, ease: "power2.out", onUpdate: bgmUi, onComplete: bgmUi });
-      else { bgm.volume = 0.32; bgmUi(); }
+      if (window.gsap) gsap.to(bgm, { volume: 0.15, duration: 1.4, ease: "power2.out", onUpdate: bgmUi, onComplete: bgmUi });
+      else { bgm.volume = 0.15; bgmUi(); }
     }
     function bgmPause() {
       if (window.gsap) gsap.to(bgm, { volume: 0, duration: 0.5, onComplete: function(){ bgm.pause(); bgmUi(); } });
