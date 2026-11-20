@@ -430,4 +430,46 @@ if (form){
     document.getElementById("bookDone").hidden = true;
   });
 }
+
+  /* salon music — starts on first touch (browser rule), toggle bottom-right */
+  var bgm = document.getElementById("bgm"), bgmBtn = document.getElementById("bgmBtn");
+  if (bgm && bgmBtn) {
+    var bgmWanted = true, bgmStarted = false;
+    bgm.volume = 0;
+    function bgmUi() {
+      var on = !bgm.paused;
+      bgmBtn.classList.toggle("is-playing", on);
+      bgmBtn.setAttribute("aria-pressed", on ? "true" : "false");
+      bgmBtn.setAttribute("aria-label", on ? "Pause salon music" : "Play salon music");
+    }
+    function bgmPlay() {
+      var p = bgm.play();
+      if (p && p.catch) p.catch(function(){});
+      if (window.gsap) gsap.to(bgm, { volume: 0.32, duration: 1.4, ease: "power2.out", onUpdate: bgmUi, onComplete: bgmUi });
+      else { bgm.volume = 0.32; bgmUi(); }
+    }
+    function bgmPause() {
+      if (window.gsap) gsap.to(bgm, { volume: 0, duration: 0.5, onComplete: function(){ bgm.pause(); bgmUi(); } });
+      else { bgm.pause(); bgmUi(); }
+    }
+    function firstTouch() {
+      document.removeEventListener("pointerdown", firstTouch);
+      document.removeEventListener("keydown", firstTouch);
+      if (bgmWanted && !bgmStarted) { bgmStarted = true; bgmPlay(); }
+    }
+    document.addEventListener("pointerdown", firstTouch);
+    document.addEventListener("keydown", firstTouch);
+    bgmBtn.addEventListener("click", function(ev) {
+      ev.stopPropagation();
+      if (bgm.paused) { bgmWanted = true; bgmStarted = true; bgmPlay(); }
+      else { bgmWanted = false; bgmPause(); }
+    });
+    document.addEventListener("visibilitychange", function() {
+      if (document.hidden) { if (!bgm.paused) bgm.pause(); }
+      else if (bgmWanted && bgmStarted && bgm.paused) bgmPlay();
+      bgmUi();
+    });
+    bgm.addEventListener("play", bgmUi);
+    bgm.addEventListener("pause", bgmUi);
+  }
 })();

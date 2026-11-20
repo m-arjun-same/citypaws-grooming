@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/spa.css?v=8">
+<link rel="stylesheet" href="assets/css/spa.css?v=9">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"CityPaws Grooming","description":"Dog grooming with elegance in River Oaks, Houston — salon and mobile grooming, doodle & poodle specialists, since 2019.","telephone":"+1-713-438-2844","email":"management@citypawshtx.com","address":{"@type":"PostalAddress","streetAddress":"1219 S Shepherd Dr","addressLocality":"Houston","addressRegion":"TX","postalCode":"77019"},"openingHours":["Mo-Sa 08:00-17:00"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.5"}}
 </script>
@@ -109,14 +109,14 @@
       <p class="lede rv">Every appointment ends with this moment. Slide the comb across and watch the groom happen — bath, brush, cut and finish, all in one pair of experienced hands.</p>
       <div class="ba" id="ba" role="slider" aria-label="Before and after grooming comparison — drag to reveal the groomed dog" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
         <img class="ba__before" id="baBefore" src="assets/img/ig/reveal-before.webp" alt="A cream poodle with a curly, untrimmed coat sitting on the CityPaws grooming table — before">
-        <div class="ba__afterWrap"><img class="ba__after" src="assets/img/ig/reveal-after.webp" alt="The same cream poodle after its CityPaws groom — coat blown out, round and sculpted">
+        <div class="ba__afterWrap"><img class="ba__after" src="assets/img/ig/reveal-after.webp" alt="A cream doodle after a CityPaws groom — sculpted round topknot, cleanly trimmed face and coat, finished with a sunflower bandana">
           <span class="ba__tag ba__tag--a">After</span>
         </div>
         <span class="ba__tag ba__tag--b">Before</span>
         <div class="ba__handle"><span class="ba__grip">⇆</span></div>
         <span class="ba__hint">Drag to reveal the groom →</span>
       </div>
-      <p class="ba__note rv">A real CityPaws transformation — the same cream poodle, before and after, from CityPaws' own Instagram (@CityPaws_Grooming): de-matting first, then the full groom.</p>
+      <p class="ba__note rv">Real CityPaws grooms from their own Instagram (@CityPaws_Grooming) — a curly, overgrown coat in; a sculpted, bandana-finished groom out.</p>
     </div>
   </section>
 
@@ -410,14 +410,20 @@
     <div class="foot__cols">
       <p><svg class="pawmark pawmark--foot" viewBox="0 0 64 64" aria-hidden="true"><g fill="#C9A24B"><ellipse cx="32" cy="41" rx="14" ry="12"/><circle cx="13" cy="30" r="6"/><circle cx="23" cy="21" r="6.5"/><circle cx="39" cy="21" r="6.5"/><circle cx="49" cy="30" r="6"/></g><g fill="#0C0C0E"><rect x="24" y="38" width="4" height="9"/><rect x="30" y="34" width="4" height="13"/><rect x="36" y="39" width="4" height="8"/></g></svg> CityPaws Grooming · River Oaks, Houston<br>Dog grooming with elegance, since 2019</p>
       <p>Salon Mon–Sat 8–5 · Mobile 7 days 8–5<br><a href="tel:+17134382844">(713) 438-2844</a> · 1219 S Shepherd Dr, Houston, TX 77019</p>
-      <p>© 2026 CityPaws Grooming · Set in Marcellus &amp; Manrope</p>
+      <p>© 2026 CityPaws Grooming · Set in Marcellus &amp; Manrope<br>Music: “BossaBossa” — Kevin MacLeod · CC BY 4.0</p>
     </div>
   </div>
 </footer>
 
+  <!-- salon music — “BossaBossa” by Kevin MacLeod, CC BY 4.0 (incompetech.com) -->
+  <audio id="bgm" loop preload="none" src="assets/audio/bossa-bossa.mp3"></audio>
+  <button class="bgm-btn" id="bgmBtn" type="button" aria-label="Play salon music" aria-pressed="false">
+    <span class="bgm-btn__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <span class="bgm-btn__label">Music</span>
+  </button>
 <script src="assets/js/vendor/lenis.min.js?v=1"></script>
 <script src="assets/js/vendor/gsap.min.js?v=1"></script>
 <script src="assets/js/vendor/ScrollTrigger.min.js?v=1"></script>
-<script src="assets/js/spa.js?v=7"></script>
+<script src="assets/js/spa.js?v=8"></script>
 </body>
 </html>
