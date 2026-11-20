@@ -43,8 +43,10 @@ it on client hosting.
   (`id="bookForm"`) and remove the `mailto:` step in `assets/js/spa.js`.
 
 ## Notes
-- The Reveal (before/after) uses two similar shih tzus for illustration —
-  the caption on the page says so.
+- The Reveal (before/after) is a real CityPaws transformation — the same
+  cream poodle from CityPaws' own Instagram (@CityPaws_Grooming). Every
+  photo on the page is CityPaws' own (their website + Instagram); see
+  humans.txt and theme-data/CITYPAWS-INSTAGRAM.md.
 - The map in the Booking section is a public Google Maps embed of the
   salon's address. No API key.
 - `404.html` is the designed not-found page; GitHub Pages and most

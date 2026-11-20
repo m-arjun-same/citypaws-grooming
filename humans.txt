@@ -1,16 +1,16 @@
 CityPaws Grooming — dog grooming with elegance, 1219 S Shepherd Dr, Houston, TX 77019.
 River Oaks salon + mobile grooming, since 2019. Doodle & poodle headquarters.
 
-Photos:
- - CityPaws' own photos, taken from citypawshtx.com for this sample site
-   (assets/img/citypaws/): a doodle at the grooming table (hero) and the
-   River Oaks salon front with the mobile van (story) are used on the
-   page; the bath, nail-care and two dark texture frames from the same
-   source are stored in that folder unused.
- - Reused stock photos (Pexels free licence): salon/mobile card photos,
-   doodle & poodle portraits, and the Reveal pair — two similar shih tzus
-   shown for illustration (before: long-fur shih tzu, Pexels photo
-   38434251; after: groomed shih tzu at the table, Goochie Poochie
-   Grooming via Pexels). Salon photography in the reused set is by
-   Tima Miroshnichenko, Goochie Poochie Grooming, Gustavo Fring and
-   others, via Pexels.
+Photos — ALL photos on this page are CityPaws' own:
+ - From citypawshtx.com (assets/img/citypaws/): a doodle at the grooming
+   table (hero), the River Oaks salon front with the mobile van (Story,
+   ch. 3), and a dark texture frame (Story, ch. 2 background).
+ - From CityPaws' Instagram @CityPaws_Grooming (assets/img/ig/), downloaded
+   and hosted locally with the post each came from credited in
+   theme-data/CITYPAWS-INSTAGRAM.md (in the project folder):
+   the Reveal pair (the same cream poodle, before and after a de-matting
+   groom), the salon and mobile-van cards, the doodle & poodle portraits,
+   the four Groom Journey steps, and the 2019 "Now Open" storefront photo
+   (Story, ch. 1). The social-share image (og.jpg) is cropped from the
+   Instagram doodle portrait.
+No stock photography is used anywhere on this page.
