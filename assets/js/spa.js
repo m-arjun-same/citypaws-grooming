@@ -154,7 +154,7 @@ if (hasGsap && !reduced){
     }
     if (line) gsap.set(line, { scaleX:0 });
     if (words.length) gsap.set(words, { yPercent:115 });
-    var tl = gsap.timeline({ scrollTrigger:{ trigger:head, start:"top 65%" } });
+    var tl = gsap.timeline({ scrollTrigger:{ trigger:head, start:"top 65%", toggleActions:"play none none reverse" } });
     if (line) tl.to(line, { scaleX:1, duration:.7, ease:"power3.inOut" });
     if (wipe){
       tl.to(wipe, { scaleX:1, duration:.7, ease:"power2.inOut" }, line ? "-=.3" : 0)
@@ -222,6 +222,12 @@ if (hasGsap && !reduced){
   gsap.fromTo("#ba", { clipPath:"inset(0 0 0 100%)" },
     { clipPath:"inset(0 0 0 0%)", duration:1.15, ease:"power3.inOut",
       scrollTrigger:{ trigger:"#ba", start:"top 82%" } });
+
+  /* ---------- GLOW DRIFT, GSAP-driven (CSS keyframes never visibly moved in probes) ---------- */
+  gsap.utils.toArray(".story,.menu,.mobile,.trust,.book,.reveal-sec,.press,.journey,.hiring,.doodle").forEach(function(sec, i){
+    gsap.fromTo(sec, { backgroundPosition:"0% 0%, 100% 100%, 0% 0%" },
+      { backgroundPosition:"25% 30%, 75% 68%, 0% 0%", duration:22 + (i % 3) * 3, ease:"sine.inOut", yoyo:true, repeat:-1 });
+  });
 
   /* ---------- STORY: photo drift (scroll-5 idea) — panels glide at their own speed ---------- */
   gsap.utils.toArray(".spanel img").forEach(function(img){
@@ -299,7 +305,7 @@ if (hasGsap && !reduced){
 
   /* ---------- FOOTER: wordmark settles from a slow zoom as you arrive ---------- */
   gsap.fromTo("#footName", { scale:1.16, y:34 }, { scale:1, y:0, duration:1.6, ease:"power3.out",
-    scrollTrigger:{ trigger:".foot", start:"top 75%" } });
+    scrollTrigger:{ trigger:".foot", start:"top 75%", toggleActions:"play none none reverse" } });
 
   /* ---------- FOOTER: giant letters stagger-rise ---------- */
   var foot = document.getElementById("footName");
