@@ -1,18 +1,17 @@
-CityPaws Grooming — dog grooming with elegance, 1219 S Shepherd Dr, Houston, TX 77019.
-River Oaks salon + mobile grooming, since 2019. Doodle & poodle headquarters.
+Biscuit & Bramble — dog grooming with elegance, 14 Acorn Lane, Bramblewood.
+Bramblewood studio + mobile grooming, since 2021. Doodle & poodle headquarters.
+An imaginary business: every name, place, contact and review on this site is invented.
 
-Hero film: CityPaws' own drone video, downloaded from citypawshtx.com (1080p master, recompressed for web, sound removed) — aerial of the River Oaks salon and the mobile van.
+Hero film: free stock video from Pexels — "Close up of a Yorkshire Terrier Getting a Haircut" by Tima Miroshnichenko (Feb 13, 2021), 20 seconds, 1280×720. Page: https://www.pexels.com/video/close-up-of-a-yorkshire-terrier-getting-a-haircut-6816875/
 
-Photos — ALL photos on this page are CityPaws' own:
- - From citypawshtx.com (assets/img/citypaws/): a doodle at the grooming
-   table (hero), the River Oaks salon front with the mobile van (Story,
-   ch. 3), and a dark texture frame (Story, ch. 2 background).
- - From CityPaws' Instagram @CityPaws_Grooming (assets/img/ig/), downloaded
-   and hosted locally with the post each came from credited in
-   theme-data/CITYPAWS-INSTAGRAM.md (in the project folder):
-   the Reveal pair (the same cream poodle, before and after a de-matting
-   groom), the salon and mobile-van cards, the doodle & poodle portraits,
-   the four Groom Journey steps, and the 2019 "Now Open" storefront photo
-   (Story, ch. 1). The social-share image (og.jpg) is cropped from the
-   Instagram doodle portrait.
-No stock photography is used anywhere on this page.
+Photos — ALL photos on this page were AI-generated for Biscuit & Bramble:
+ - Hero poster: cream doodle with a sunflower-yellow bandana on the grooming table.
+ - Story: golden retriever at the garden-shed studio; the studio front with the
+   deep-green mobile van; dark curly-coat close-up (story panel background).
+ - The Reveal pair: the same style of cream poodle, shaggy before and sculpted
+   with a bandana after.
+ - Studio and mobile-van cards, the doodle & poodle portraits, the four
+   Groom Journey steps (bath, brush, cut, finish), and the social-share image.
+No real business's photos are used anywhere on this page.
+
+Salon music: "Doing Fine" by Sonican, Pixabay Content License.

@@ -1,4 +1,4 @@
-/* CityPaws Grooming v2 — motion system + own engines.
+/* Biscuit & Bramble v2 — motion system + own engines.
    Loader, hero intro, marquees, split-word section heads, pinned story,
    groom-wipe, worlds expander, pinned groom journey, doodle drift,
    press word-scrub, colour-journey bands, accordion, counter, booking form. */
@@ -347,7 +347,7 @@ var SERVICES = [
   ["De-shedding","À la carte","Treatments designed to remove loose undercoat and reduce shedding — a healthier coat for them, a cleaner home for you."],
   ["Nail Cutting & Grinding","À la carte","Cut and smooth finish by grinding, keeping nails at a healthy length for comfortable paws and proper foot health."],
   ["Teeth Brushing","À la carte","A gentle brush that helps reduce plaque and bad breath, and keeps teeth and gums in better shape between vet visits."],
-  ["Doggie Facials","À la carte","A soothing facial cleanse for tear-stained, food-catching faces — a CityPaws finishing touch, and a doodle favourite."],
+  ["Doggie Facials","À la carte","A soothing facial cleanse for tear-stained, food-catching faces — a Biscuit & Bramble finishing touch, and a doodle favourite."],
   ["Doodle & Poodle Specialist Cuts","Specialists","Our headquarters specialty: teddy-bear cuts, face shaping and coat plans for doodles and poodles, shaped to the dog in front of us."]
 ];
 var list = document.getElementById("menuList");
@@ -387,7 +387,7 @@ if (form){
     var owner = (fd.get("owner")||"").toString().trim(),
         phone = (fd.get("phone")||"").toString().trim(),
         pet = (fd.get("pet")||"").toString().trim(),
-        where = (fd.get("where")||"River Oaks Salon").toString(),
+        where = (fd.get("where")||"Bramblewood Studio").toString(),
         service = (fd.get("service")||"").toString(),
         date = (fd.get("date")||"").toString(),
         err = document.getElementById("formErr");
@@ -408,11 +408,11 @@ if (form){
       "Where: " + where,
       "Service: " + service, "Preferred day: " + (date || "First available"),
       "Notes: " + (notes || "—")].join("\n");
-    var mail = "mailto:management@citypawshtx.com"
+    var mail = "mailto:hello@biscuitandbramble.com"
       + "?subject=" + encodeURIComponent("Appointment request — " + pet + " · " + service)
       + "&body=" + encodeURIComponent(body);
     document.getElementById("doneText").textContent =
-      "Thanks, " + owner.split(" ")[0] + " — your email app should open with this request addressed to CityPaws. Press Send there, and we'll call you on " + phone + " to confirm " + pet + "'s appointment.";
+      "Thanks, " + owner.split(" ")[0] + " — your email app should open with this request addressed to Biscuit & Bramble. Press Send there, and we'll call you on " + phone + " to confirm " + pet + "'s appointment.";
     var sum = document.getElementById("doneSum");
     sum.innerHTML = "";
     [["Pet", pet], ["Where", where], ["Service", service], ["Preferred day", date || "First available"], ["We call", phone]].forEach(function(pair){

@@ -76,7 +76,7 @@ em{font-family:var(--disp);font-weight:400;font-style:normal}
 .hero__shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,12,14,.58) 0%,rgba(12,12,14,.12) 38%,rgba(12,12,14,.30) 62%,rgba(12,12,14,.86) 100%),linear-gradient(90deg,rgba(12,12,14,.52) 0%,rgba(12,12,14,0) 62%)}
 .hero__panel{position:relative;z-index:2;width:100%;padding:calc(var(--hdr) + 44px) var(--m) 96px}
 .hero__mark{width:68px;height:68px;margin-bottom:24px;filter:drop-shadow(0 4px 18px rgba(0,0,0,.45))}
-.hero__name{font-family:var(--disp);font-weight:400;font-size:clamp(58px,9.2vw,138px);line-height:1;letter-spacing:.04em;text-shadow:0 6px 34px rgba(0,0,0,.35)}
+.hero__name{font-family:var(--disp);font-weight:400;font-size:clamp(52px,8.2vw,118px);line-height:1.02;letter-spacing:.04em;text-shadow:0 6px 34px rgba(0,0,0,.35)}
 .hero__sub{margin-top:16px;font-size:13px;font-weight:800;letter-spacing:.52em;color:var(--gold)}
 .hero__rule{display:block;width:min(340px,70%);height:2px;background:var(--gold);margin-top:24px;transform-origin:left center}
 .hero__tag{margin-top:24px;max-width:44ch;font-size:clamp(16px,1.5vw,20px);line-height:1.5;color:rgba(255,255,255,.9)}
@@ -109,7 +109,7 @@ em{font-family:var(--disp);font-weight:400;font-style:normal}
 .spanel__body b{font-size:11.5px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2)}
 .spanel__body h3{font-family:var(--disp);font-weight:400;font-size:clamp(28px,3vw,40px);margin:10px 0 10px}
 .spanel__body p{color:var(--mute);font-size:15.5px;max-width:46ch}
-.spanel--dark{background:var(--black2) url("../img/citypaws/cp2.webp") center/cover;color:#fff;justify-content:flex-end;min-height:480px}
+.spanel--dark{background:var(--black2) url("../img/bb/dark-coat.webp") center/cover;color:#fff;justify-content:flex-end;min-height:480px}
 .spanel--dark .spanel__body p{color:rgba(255,255,255,.78)}
 .spanel--dark .spanel__body b{color:var(--gold)}
 .story__prog{height:2px;background:rgba(27,27,30,.12);margin-top:34px;border-radius:2px;overflow:hidden}
@@ -377,3 +377,6 @@ fieldset.f{border:0}
   /* long emails wrap instead of pushing out of their column */
   .info dd,.hiring .lede a{overflow-wrap:anywhere}
 }
+
+.findus{font-size:16px;line-height:1.6;color:var(--ink);background:var(--stone);border:1px solid var(--line);border-radius:16px;padding:22px 24px;max-width:560px}
+.findus b{color:var(--gold2);letter-spacing:.14em;text-transform:uppercase;font-size:12px}

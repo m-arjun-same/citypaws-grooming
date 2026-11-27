@@ -1,9 +1,9 @@
-# CityPaws Grooming — Website Handover
+# Biscuit & Bramble — Website Handover
 
-Static website for CityPaws Grooming, 1219 S Shepherd Dr, Houston, TX 77019.
-No build step, no backend, no database, no API keys, no analytics.
-Transfer-only: this repo is handed to the client as-is; we do not deploy
-it on client hosting.
+Static website for **Biscuit & Bramble**, an imaginary dog grooming studio
+in Bramblewood (14 Acorn Lane). No build step, no backend, no database,
+no API keys, no analytics. This is a fictional business created for this
+site — the names, town, address, phone, email and reviews are invented.
 
 ## Run / deploy
 - Open `index.html`, or serve the folder with any static host
@@ -19,40 +19,33 @@ it on client hosting.
 - Photos: `assets/img/` — credits in `humans.txt`
 - Type: Marcellus + Manrope, loaded from Google Fonts in `index.html`
 
-## Business facts on the page (verified 2026-11-20)
-- River Oaks salon: 1219 S Shepherd Dr, Houston, TX 77019
-- Phone (713) 438-2844 · Email management@citypawshtx.com
-- Hours: Salon Mon–Sat 8:00 AM–5:00 PM · Mobile 7 days 8:00 AM–5:00 PM
-- Founded Aug 2019 in Rice Village by Danni Betancourt; moved to
-  River Oaks in Feb 2021 after the freeze/leak ceiling collapse.
-- Services: Full Groom, Bath & Sani, Express Bath (inclusions exactly
-  as published on citypawshtx.com) + à la carte items. CityPaws
-  publishes no prices, so the site shows none.
+## Business facts on the page (imaginary)
+- Bramblewood studio: 14 Acorn Lane, Bramblewood
+- Phone (555) 014-8820 · Email hello@biscuitandbramble.com
+- Hours: Studio Mon–Sat 8:00 AM–5:00 PM · Mobile 7 days 8:00 AM–5:00 PM
+- Founded Mar 2021 in a garden shed by Hazel Quinn; moved to
+  14 Acorn Lane in Winter 2022 after a storm damaged the shed roof.
+- Services: The Full Bramble, Bath & Tidy, The Quick Wash (inclusions
+  as listed on the page) + à la carte items. No prices are shown —
+  prices are quoted for each pup's coat and size.
 - Mobile grooming requires vaccines up-to-date: DHPP, Bordetella, Rabies.
-- Hiring: Dog Groomer and Grooming Assistant, listed at $15–$20/hr
-  (employer-provided, per Glassdoor). Apply by emailing a resume to
-  management@citypawshtx.com, subject "Grooming position application".
+- Hiring: Dog Groomer and Grooming Assistant. Pay is shared on
+  application. Apply by emailing a resume to
+  jobs@biscuitandbramble.com, subject "Grooming position application".
 
 ## Booking form — read this
 - The form validates in the browser, then opens the visitor's email app
   with the request pre-filled and addressed to
-  **management@citypawshtx.com**. The visitor presses Send. There is no
+  **hello@biscuitandbramble.com**. The visitor presses Send. There is no
   silent online submission and nothing is stored.
 - To get silent in-page submissions instead, connect a form service
   (e.g. Formspree / Web3Forms) to the form in `index.html`
   (`id="bookForm"`) and remove the `mailto:` step in `assets/js/spa.js`.
 
 ## Notes
-- The Reveal (before/after) is a real CityPaws transformation — the same
-  cream poodle from CityPaws' own Instagram (@CityPaws_Grooming). Every
-  photo on the page is CityPaws' own (their website + Instagram); see
-  humans.txt and theme-data/CITYPAWS-INSTAGRAM.md.
-- The map in the Booking section is a public Google Maps embed of the
-  salon's address. No API key.
+- Every photo on the page was AI-generated for this imaginary business;
+  see humans.txt. The hero film is a free stock video (Pexels).
+- There is no live map: the business is imaginary, so the Booking
+  section has a written "Find us" note instead of a map embed.
 - `404.html` is the designed not-found page; GitHub Pages and most
   static hosts serve it automatically.
-
-## Transfer checklist
-- [ ] Repo transferred to / shared with the client's GitHub account
-- [ ] Client told: form works by email (see above), no analytics installed
-- [ ] Client has this guide
