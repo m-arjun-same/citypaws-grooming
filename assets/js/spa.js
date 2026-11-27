@@ -154,14 +154,15 @@ if (hasGsap && !reduced){
     }
     if (line) gsap.set(line, { scaleX:0 });
     if (words.length) gsap.set(words, { yPercent:115 });
-    var tl = gsap.timeline({ scrollTrigger:{ trigger:head, start:"top 86%" } });
+    var tl = gsap.timeline({ scrollTrigger:{ trigger:head, start:"top 90%" } });
     if (line) tl.to(line, { scaleX:1, duration:.7, ease:"power3.inOut" });
     if (wipe){
-      tl.to(wipe, { scaleX:1, duration:.38, ease:"power2.inOut" }, line ? "-=.3" : 0)
+      tl.to(wipe, { scaleX:1, duration:.5, ease:"power2.inOut" }, line ? "-=.3" : 0)
+        .to(wipe, { scaleX:1, duration:.18, ease:"none" })
         .set(wipe, { transformOrigin:"right center" })
-        .to(wipe, { scaleX:0, duration:.38, ease:"power2.inOut" }, "-=.02");
+        .to(wipe, { scaleX:0, duration:.5, ease:"power2.inOut" }, "-=.02");
     }
-    if (words.length) tl.to(words, { yPercent:0, duration:.85, stagger:.045, ease:"power4.out" }, wipe ? "-=.28" : (line ? "-=.35" : 0));
+    if (words.length) tl.to(words, { yPercent:0, duration:.85, stagger:.045, ease:"power4.out" }, wipe ? "-=.42" : (line ? "-=.35" : 0));
   });
   /* press kick is outside a .shead */
   document.querySelectorAll(".press .kick__line").forEach(function(line){
@@ -297,8 +298,8 @@ if (hasGsap && !reduced){
     scrollTrigger:{ trigger:".quotes", start:"top 84%" } });
 
   /* ---------- FOOTER: wordmark settles from a slow zoom as you arrive ---------- */
-  gsap.fromTo("#footName", { scale:1.12 }, { scale:1, ease:"none",
-    scrollTrigger:{ trigger:".foot", start:"top bottom", end:"top 25%", scrub:true } });
+  gsap.fromTo("#footName", { scale:1.16, y:34 }, { scale:1, y:0, duration:1.25, ease:"power3.out",
+    scrollTrigger:{ trigger:".foot", start:"top 88%" } });
 
   /* ---------- FOOTER: giant letters stagger-rise ---------- */
   var foot = document.getElementById("footName");
