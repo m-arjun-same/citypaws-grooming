@@ -69,7 +69,7 @@ window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
 function showAll(){
   document.documentElement.classList.add("no-anim");
   var f = document.getElementById("storyProg"); if (f) f.style.transform = "scaleX(1)";
-  var b = document.querySelector(".trust__big span[data-count]"); if (b) b.textContent = "4.5";
+  var b = document.querySelector(".trust__big span[data-count]"); if (b) b.textContent = "4.9";
   var loader = document.getElementById("loader"); if (loader) loader.style.display = "none";
 }
 
@@ -116,6 +116,9 @@ if (hasGsap && !reduced){
   /* hero photo parallax on scroll-out */
   gsap.to("#heroVid", { yPercent:10, ease:"none",
     scrollTrigger:{ trigger:".hero", start:"top top", end:"bottom top", scrub:true } });
+  /* hero copy drifts up and fades as the video scrolls away */
+  gsap.to(".hero__panel", { yPercent:-14, opacity:.2, ease:"none",
+    scrollTrigger:{ trigger:".hero", start:"top top", end:"bottom top", scrub:true } });
 
   /* ---------- MARQUEES ---------- */
   function marquee(track, dur, reverse){
@@ -138,16 +141,27 @@ if (hasGsap && !reduced){
     });
   }
 
-  /* ---------- SECTION HEADS: kick line draw + split-word rise ---------- */
+  /* ---------- SECTION HEADS: kick line draw + gold block-swipe + split-word rise ---------- */
   document.querySelectorAll(".shead").forEach(function(head){
     var line = head.querySelector(".kick__line");
     var h2 = head.querySelector("[data-split]");
     var words = h2 ? splitWords(h2) : [];
+    var wipe = null;
+    if (h2){
+      wipe = document.createElement("span"); wipe.className = "h2wipe"; wipe.setAttribute("aria-hidden","true");
+      h2.insertBefore(wipe, h2.firstChild);
+      gsap.set(wipe, { scaleX:0, transformOrigin:"left center" });
+    }
     if (line) gsap.set(line, { scaleX:0 });
     if (words.length) gsap.set(words, { yPercent:115 });
     var tl = gsap.timeline({ scrollTrigger:{ trigger:head, start:"top 86%" } });
     if (line) tl.to(line, { scaleX:1, duration:.7, ease:"power3.inOut" });
-    if (words.length) tl.to(words, { yPercent:0, duration:.85, stagger:.045, ease:"power4.out" }, line ? "-=.35" : 0);
+    if (wipe){
+      tl.to(wipe, { scaleX:1, duration:.38, ease:"power2.inOut" }, line ? "-=.3" : 0)
+        .set(wipe, { transformOrigin:"right center" })
+        .to(wipe, { scaleX:0, duration:.38, ease:"power2.inOut" }, "-=.02");
+    }
+    if (words.length) tl.to(words, { yPercent:0, duration:.85, stagger:.045, ease:"power4.out" }, wipe ? "-=.28" : (line ? "-=.35" : 0));
   });
   /* press kick is outside a .shead */
   document.querySelectorAll(".press .kick__line").forEach(function(line){
@@ -207,6 +221,12 @@ if (hasGsap && !reduced){
   gsap.fromTo("#ba", { clipPath:"inset(0 0 0 100%)" },
     { clipPath:"inset(0 0 0 0%)", duration:1.15, ease:"power3.inOut",
       scrollTrigger:{ trigger:"#ba", start:"top 82%" } });
+
+  /* ---------- STORY: photo drift (scroll-5 idea) — panels glide at their own speed ---------- */
+  gsap.utils.toArray(".spanel img").forEach(function(img){
+    gsap.fromTo(img, { yPercent:-7, scale:1.12 }, { yPercent:7, scale:1.12, ease:"none",
+      scrollTrigger:{ trigger:".story", start:"top bottom", end:"bottom top", scrub:true } });
+  });
 
   /* ---------- WORLDS image parallax ---------- */
   gsap.utils.toArray(".world img").forEach(function(img){
@@ -275,6 +295,10 @@ if (hasGsap && !reduced){
     scrollTrigger:{ trigger:".quotes", start:"top 84%" } });
   gsap.fromTo(".q--r", { x:64, opacity:0 }, { x:0, opacity:1, duration:1, ease:"power3.out",
     scrollTrigger:{ trigger:".quotes", start:"top 84%" } });
+
+  /* ---------- FOOTER: wordmark settles from a slow zoom as you arrive ---------- */
+  gsap.fromTo("#footName", { scale:1.12 }, { scale:1, ease:"none",
+    scrollTrigger:{ trigger:".foot", start:"top bottom", end:"top 25%", scrub:true } });
 
   /* ---------- FOOTER: giant letters stagger-rise ---------- */
   var foot = document.getElementById("footName");
